@@ -1,0 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-offwhite: #F7F4EF;
+    --color-black: #0E0D0B;
+    --color-gold: #C9A84C;
+    --color-ink: #1A1208;
+    --color-gray: #6A6050;
+    --color-line: #06C755;
+    --color-cream: #F0EAD8;
+    --black: #1A1A1A;
+    --gold: #C9A84C;
+    --gold-light: #E8C46A;
+    --beige: #F8F5F2;
+    --text-muted: #888888;
+    --border: rgba(201,168,76,0.25);
+    --section-darker: #0F0F0F;
+    --section-darkest: #0A0A0A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Noto Serif JP', serif;
+    background-color: #1A1A1A;
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+  }
+}
+
+@layer components {
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-elite {
+    font-family: 'Special Elite', serif;
+  }
+
+  .font-noto {
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  .section-offwhite {
+    background-color: var(--color-offwhite);
+  }
+
+  .section-black {
+    background-color: var(--color-black);
+    color: white;
+  }
+
+  .section-cream {
+    background-color: var(--color-cream);
+  }
+
+  .gold-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .gold-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-gold);
+  }
+
+  .manga-panel {
+    border: 2px solid var(--color-ink);
+    position: relative;
+    background: white;
+  }
+
+  .manga-caption {
+    background-color: var(--color-ink);
+    color: white;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .manga-caption-gold {
+    background-color: var(--color-gold);
+    color: var(--color-ink);
+    font-family: 'Special Elite', serif;
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .btn-line {
+    background-color: var(--color-line);
+    color: white;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    min-height: 44px;
+  }
+
+  .btn-line:hover {
+    background-color: #05b34a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(6, 199, 85, 0.35);
+  }
+
+  .btn-ghost-white {
+    border: 1.5px solid rgba(255,255,255,0.6);
+    color: white;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 400;
+    padding: 14px 28px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    min-height: 44px;
+  }
+
+  .btn-ghost-white:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
+  .btn-ghost-dark {
+    border: 1.5px solid var(--color-ink);
+    color: var(--color-ink);
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 400;
+    padding: 14px 28px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    min-height: 44px;
+  }
+
+  .btn-ghost-dark:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 600;
+    color: var(--color-ink);
+    letter-spacing: 0.02em;
+  }
+
+  .section-heading-white {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.02em;
+  }
+
+  .section-label {
+    font-family: 'Special Elite', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  .gold-border-box {
+    border: 1.5px solid var(--color-gold);
+    position: relative;
+  }
+
+  .gold-border-box::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: -4px;
+    bottom: -4px;
+    border: 1.5px solid var(--color-gold);
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .body-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    line-height: 1.85;
+    color: var(--color-ink);
+  }
+
+  .sub-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: var(--color-gray);
+  }
+}
+
+/* ========================================
+   古書・活版印刷の質感 — グローバル定義
+   ======================================== */
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.card-elevated {
+  box-shadow:
+    0 1px 2px rgba(26, 18, 8, 0.06),
+    0 4px 12px rgba(26, 18, 8, 0.08),
+    0 8px 24px rgba(26, 18, 8, 0.05),
+    inset 0 1px 0 rgba(245, 240, 232, 0.6);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card-elevated:hover {
+  box-shadow:
+    0 2px 4px rgba(26, 18, 8, 0.08),
+    0 8px 20px rgba(26, 18, 8, 0.12),
+    0 16px 40px rgba(26, 18, 8, 0.08),
+    inset 0 1px 0 rgba(245, 240, 232, 0.6);
+  transform: translateY(-2px);
+}
+
+.bg-aged-paper {
+  background-color: #1A1A1A;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.02) 0%, transparent 50%);
+}
+
+.bg-aged-cream {
+  background-color: #F0EAD8;
+  background-image:
+    radial-gradient(ellipse at 70% 80%, rgba(201,168,76,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 10% 10%, rgba(26,18,8,0.03) 0%, transparent 50%);
+}
+
+.bg-aged-black {
+  background-color: #1A1208;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 100%, rgba(201,168,76,0.04) 0%, transparent 50%);
+}
+
+.border-book {
+  border: 1px solid rgba(26, 18, 8, 0.18);
+  box-shadow:
+    0 2px 8px rgba(26, 18, 8, 0.07),
+    0 1px 2px rgba(26, 18, 8, 0.05),
+    inset 0 0 0 1px rgba(245, 240, 232, 0.4);
+}
+
+.border-gold-book {
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  box-shadow:
+    0 2px 12px rgba(201, 168, 76, 0.08),
+    0 1px 3px rgba(26, 18, 8, 0.06),
+    inset 0 0 0 1px rgba(201, 168, 76, 0.1);
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.4), transparent);
+  margin: 0;
+}
